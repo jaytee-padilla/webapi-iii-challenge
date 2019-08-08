@@ -1,11 +1,6 @@
-const express = require('express');
-const server = express();
+const server = require('./server');
 
-// setup api server
-server.use(express.json());
-server.get('/', (req, res) => res.send('\nAPI running\n'));
-server.listen(7000, () => console.log('\nAPI running on port 7000\n'));
+// port variable enables port to be dynamic
+const port = 7000;
 
-// routing
-const routes = require('./server');
-server.use('/api', routes);
+server.listen(port, () => console.log(`\nAPI running on http://localhost:${port}\n`));

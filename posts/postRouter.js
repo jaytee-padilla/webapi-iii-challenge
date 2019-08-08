@@ -1,6 +1,8 @@
-const express = 'express';
-
+const express = require('express');
 const router = express.Router();
+
+// import database
+const postDb = require('./postDb');
 
 router.get('/', (req, res) => {
 
